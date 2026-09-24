@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Ambiora Esports Arena</title>
+        <meta name="description" content = "Ambiora Esports Arena : a 5-team online champion">
+
+        <link rel = "preconnect" href="https://fonts.googleapis.com">
+        <link rel = "preconnect" href="htpps://fonts.gstatic.com" crossorigin>
+        <link href = "https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&f">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/landing.css">
+    </head>
+    <body>
+        <nav class = "navbar">
+            <div class = "container nav-inner">
+            <a href = "index.html" class="logo">AMBIORA<span>ESPORTS</span></a>
+            <button class="menu-btn" id="menu-btn" airia-label="Open menu">&#9766;</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href = "#games">Games</a></li>
+                <li><a href = "#prizes">Prize pool</a></li>
+                <li><a href = "#format">Format</a></li>
+                <li><a href = "#faq">FAQ</a></li>
+                <li><a href = "teams.html">Teams &amp; fixtures</a></li>
+            </ul>
+        </div>
+        </nav>
+
+        <header class="hero">
+            <canvas id="particles"></canvas>
+            <div class="container hero-content">
+                <p class="hero-tag">Season 1 online championship</p>
+                <h1 class="glitch" data-text="AMBIORA ARENA">AMBIORA ARENA</h1>
+                <p class="hero-sub">Five teams. Twenty-five players. One champion.</p>
+
+                <div class="countdown" id="countdown">
+                <div class="time-box"><span id="days">00</span><small>Days</small></div>
+                <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
+                <div class="time-box"><span id="mins">00</span><small>Minutes</small></div>
+                <div class="time-box"><span id="secs">00</span><small>Seconds</small></div>
+            </div>
+
+            <div class="hero-btns">
+                <a href="teams.html" class="btn btn-primary">Register your team</a>
+                <a href="#format" class="btn btn-outline">See the format</a>
+            </div>
+    </div>
+  </header>
+  <section class="section" id="games">
+    <div class="container">
+      <h2 class="section-title">Pick your battlefield</h2>
+      <p class="section-sub">Four game categories, one tournament.</p>
+      <div class="games-grid">
+        <article class="game-card">
+          <div class="game-icon">🎯</div>
+          <h3>Tactical FPS</h3>
+          <p>5v5 bomb-defuse rounds where aim, utility and calls decide the map.</p>
+        </article>
+        <article class="game-card">
+          <div class="game-icon">🪂</div>
+          <h3>Battle Royale</h3>
+          <p>Drop in, loot fast, rotate smart and be the last squad standing.</p>
+        </article>
+        <article class="game-card">
+          <div class="game-icon">⚔️</div>
+          <h3>MOBA</h3>
+          <p>Three lanes, two bases, one team that controls the objectives.</p>
+        </article>
+        <article class="game-card">
+          <div class="game-icon">🥊</div>
+          <h3>Fighting</h3>
+          <p>One-on-one duels. Read your opponent and punish every mistake.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section-alt" id="prizes">
+    <div class="container">
+      <h2 class="section-title">Prize pool</h2>
+      <p class="section-sub">₹85,000 split between the top three teams.</p>
+      <div class="prize-grid">
+        <div class="prize-card second">
+          <p class="prize-place">2nd place</p>
+          <p class="prize-amount" data-target="25000">₹0</p>
+        </div>
+        <div class="prize-card first">
+          <p class="prize-place">Champion</p>
+          <p class="prize-amount" data-target="50000">₹0</p>
+        </div>
+        <div class="prize-card third">
+          <p class="prize-place">3rd place</p>
+          <p class="prize-amount" data-target="10000">₹0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Format (a real sequence, so it is numbered) -->
+  <section class="section" id="format">
+    <div class="container">
+      <h2 class="section-title">How the tournament works</h2>
+      <p class="section-sub">From sign-up to the trophy in four steps.</p>
+      <ol class="timeline">
+        <li class="step">
+          <span class="step-num">1</span>
+          <div>
+            <h3>Register</h3>
+            <p>Create your team and add five players with their in-game names and roles.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <div>
+            <h3>Fixtures drop</h3>
+            <p>A round-robin schedule is generated, so every team faces every other team once.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <div>
+            <h3>League stage</h3>
+            <p>Five rounds, ten matches. A win is worth 3 points and a draw 1.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">4</span>
+          <div>
+            <h3>Grand final</h3>
+            <p>The top two teams on the points table play one match for the title.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ (details/summary works without JavaScript) -->
+  <section class="section section-alt" id="faq">
+    <div class="container faq-wrap">
+      <h2 class="section-title">Questions</h2>
+      <details>
+        <summary>How many players can a team have?</summary>
+        <p>Exactly five. Every player needs a name, an in-game name, a role and a game ID.</p>
+      </details>
+      <details>
+        <summary>Can one player join two teams?</summary>
+        <p>No. In-game names and game IDs must be unique across the whole tournament.</p>
+      </details>
+      <details>
+        <summary>What happens when there are an odd number of teams?</summary>
+        <p>Each round one team gets a bye and rests. With five teams, every team rests exactly once.</p>
+      </details>
+      <details>
+        <summary>How is a tie on points broken?</summary>
+        <p>By score difference first, then by total score.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section class="section cta">
+    <div class="container">
+      <h2>Your squad is waiting</h2>
+      <p>Registration takes about two minutes per team.</p>
+      <a href="teams.html" class="btn btn-primary">Register your team</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Ambiora Esports Arena · Built by Aditya Shrivastava for the Ambiora Technical Department task</p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/landing.js"></script>
+</body>
+</html>
+    </body>
+</html>
