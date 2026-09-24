@@ -13,6 +13,20 @@ A 5-team esports tournament website with a real backend — teams and players ar
 - Enter match scores → live points table → grand final between the top 2
 - "Load demo data" fills 25 players instantly; "Reset" clears everything
 
+## How to Register a Team
+1. Open the site and click **Teams & fixtures** (or **Register your team**).
+2. Under "Create a team," type a name and click **Add team** — repeat until you have 5 teams.
+3. Under "Add a player," pick a team, fill in the player's name, IGN, role, and game ID, and click **Add player** — repeat until every team has 5 players (25 total).
+4. Once full, click **Generate fixtures** to get the round-robin schedule, then enter scores as matches are played.
+
+## Demo
+Click **Load demo data** to instantly fill 5 teams with 25 players so you can test fixture generation, scoring, and the points table without typing anything by hand. Click **Reset tournament** to clear everything and start fresh.
+
+## Benefits
+- **Real backend, not just a form** — every rule (team limits, duplicate names, duplicate IGNs) is enforced on the server, so it can't be bypassed
+- **Data persists everywhere** — stored in a cloud database, so the same tournament shows up on any device, not just the browser you registered on
+- **Fair, provable scheduling** — the round-robin algorithm guarantees every team plays every other team exactly once, with no manual scheduling errors
+
 ## Frontend
 - `index.html`, `teams.html` — the two pages
 - `css/style.css`, `css/landing.css`, `css/teams.css` — styling
