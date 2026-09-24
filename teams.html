@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teams &amp; Fixtures | Ambiora Esports Arena</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/teams.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">AMBIORA<span>ESPORTS</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#format">Format</a></li>
+        <li><a href="#teamsSection">Teams</a></li>
+        <li><a href="#fixturesSection">Fixtures</a></li>
+        <li><a href="teams.html" class="active">Teams &amp; fixtures</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Teams &amp; fixtures</h1>
+      <p>Register 5 teams of 5 players, then generate the round-robin schedule.</p>
+
+      <div class="status-bar">
+        <div class="status-item">Teams <strong id="teamCount">0/5</strong></div>
+        <div class="status-item">Players <strong id="playerCount">0/25</strong></div>
+      </div>
+
+      <div class="toolbar">
+        <button id="demoBtn" class="btn btn-outline">Load demo data</button>
+        <button id="resetBtn" class="btn btn-danger">Reset tournament</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+
+    <section class="panel-grid">
+      <div class="panel">
+        <h2>1. Create a team</h2>
+        <form id="teamForm" novalidate>
+          <label for="teamName">Team name</label>
+          <input type="text" id="teamName" placeholder="e.g. Shadow Wolves" maxlength="20" autocomplete="off">
+          <button type="submit" id="addTeamBtn" class="btn btn-primary">Add team</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>2. Add a player</h2>
+        <form id="playerForm" novalidate>
+          <label for="playerTeam">Team</label>
+          <select id="playerTeam"></select>
+
+          <div class="form-row">
+            <div>
+              <label for="playerName">Player name</label>
+              <input type="text" id="playerName" placeholder="e.g. Rohan Mehta" maxlength="30" autocomplete="off">
+            </div>
+            <div>
+              <label for="playerIgn">In-game name (IGN)</label>
+              <input type="text" id="playerIgn" placeholder="e.g. Viper_07" maxlength="20" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="playerRole">Role</label>
+              <select id="playerRole">
+                <option value="">Select role</option>
+                <option>IGL</option>
+                <option>Entry Fragger</option>
+                <option>Support</option>
+                <option>Sniper</option>
+                <option>Flex</option>
+              </select>
+            </div>
+            <div>
+              <label for="playerGameId">Game ID</label>
+              <input type="text" id="playerGameId" placeholder="e.g. 5123987" maxlength="20" autocomplete="off">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add player</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="block" id="teamsSection">
+      <h2 class="block-title">Registered teams</h2>
+      <div id="teamsGrid" class="teams-grid"></div>
+    </section>
+
+    <section class="block" id="fixturesSection">
+      <div class="block-head">
+        <h2 class="block-title">Fixtures</h2>
+        <div class="block-actions">
+          <button id="printBtn" class="btn btn-outline" hidden>Print fixtures</button>
+          <button id="generateBtn" class="btn btn-primary" disabled>Generate fixtures</button>
+        </div>
+      </div>
+      <p id="fixtureHint" class="hint"></p>
+      <div id="fixturesContainer" class="rounds-grid"></div>
+    </section>
+
+    <section class="block" id="standingsBlock" hidden>
+      <h2 class="block-title">Points table</h2>
+      <p class="hint">Type scores into the fixtures above. The table updates automatically. Top 2 reach the grand final.</p>
+      <div class="table-wrap">
+        <table class="standings">
+          <thead>
+            <tr>
+              <th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>Diff</th><th>Pts</th>
+            </tr>
+          </thead>
+          <tbody id="standingsBody"></tbody>
+        </table>
+      </div>
+      <div id="finalCard" class="final-card" hidden></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Ambiora Esports Arena · Data is stored on the server (Vercel Functions + Upstash Redis) · Team logos by DiceBear</p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/teams.js"></script>
+</body>
+</html>
