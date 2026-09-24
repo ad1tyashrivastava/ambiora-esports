@@ -1,0 +1,9 @@
+{
+    "name" : "ambiora-esports",
+    "version" : "1.0.0",
+    "description" : "Esports Tournament Website for Ambiora",
+    "type" : "module",
+    "dependencies": {
+        "@upstash/redis": "^1.39.0"
+    }
+}
