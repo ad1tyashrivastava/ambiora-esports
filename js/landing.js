@@ -1,4 +1,4 @@
-const tournamentDate = new Date('2026-10-15T18:00:00+05:30').getTime();
+const tournamentDate = new Date('2027-02-28T18:00:00+05:30').getTime();
 
 function updateCountdown() {
   const diff = tournamentDate - Date.now();
